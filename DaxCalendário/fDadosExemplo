@@ -1,0 +1,9 @@
+let
+    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMjDRNzTQNzIwMlLSUTIwhXKMgRxTAyAA0m6lOYl5+UqxOkDF5vpAJUYGhhYgxRb6QD5QMUiRkQFUtVNqTkkRsnpjfSOIDNBkiGZTMAci6JyZDDE9FgA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Data = _t, DataConclusao = _t, Valor = _t, Vendedor = _t]),
+    TipoAlterado = Table.TransformColumnTypes(Fonte,{{"Data", type date}, {"DataConclusao", type date}, {"Valor", Int64.Type}})
+in
+    TipoAlteradolet
+    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMjDRNzTQNzIwMlLSUTIwhXKMgRxTAyAA0m6lOYl5+UqxOkDF5vpAJUYGhhYgxRb6QD5QMUiRkQFUtVNqTkkRsnpjfSOIDNBkiGZTMAci6JyZDDE9FgA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Data = _t, DataConclusao = _t, Valor = _t, Vendedor = _t]),
+    TipoAlterado = Table.TransformColumnTypes(Fonte,{{"Data", type date}, {"DataConclusao", type date}, {"Valor", Int64.Type}})
+in
+    TipoAlterado

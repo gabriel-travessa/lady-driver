@@ -1,0 +1,5 @@
+let
+    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("NU8xDsIwDPxKlJkBKirEiEBILBWCMlUd3MaokYJTORUD32FA4gms+RhJ2g7n4e58Z1eVXMlFwt7SnWFAJv0C//FvK26kn8gOjKwXlcyiax1QagaFNKBLfKTzgIMGoawoGRowHSjLSd4EaTvLIE6ksEdS/kuthjEgiycswyiscyCuSJ3l4Eax64Gx1Wo0Jl+sO2oK+VN9PrNntq2Bx3R86Lpg73+N0e20npwxpIAhPlX/AQ==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Dia = _t, Mes = _t, Feriado = _t]),
+    TipoAlterado = Table.TransformColumnTypes(Fonte,{{"Dia", Int64.Type}, {"Mes", Int64.Type}})
+in
+    TipoAlterado

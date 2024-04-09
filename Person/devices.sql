@@ -1,0 +1,1 @@
+SELECT id, active, created_at, device_available, device_cordova, device_is_virtual, device_manufacturer, device_model, device_platform, device_version, app_version FROM ladydriver.device

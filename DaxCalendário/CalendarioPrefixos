@@ -1,0 +1,4 @@
+let
+    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WKijRdQpS0lEKBuIQpVidaKXUPN1QEC8ciAMhIsW6rsFQNc5KsbEA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Idioma = _t, Semana = _t, Trimestre = _t])
+in
+    Fonte

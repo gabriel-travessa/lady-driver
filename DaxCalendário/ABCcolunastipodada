@@ -1,0 +1,1 @@
+= "{ " & Text.Combine( Table.AddColumn( SomenteTipoData, "Datas", each [Name] & "[" & [Column] & "]" )[Datas], " , " ) & " }"

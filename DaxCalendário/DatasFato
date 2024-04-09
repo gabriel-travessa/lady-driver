@@ -1,0 +1,14 @@
+let
+    Fonte = List.Combine(
+        //Cole abaixo a string resultado da query "ColunasTipoData"
+        { fDadosExemplo[Data] , fDadosExemplo[DataConclusao] }
+    ),
+    RemoveDistintos = List.Buffer( List.Distinct(  Fonte )),
+    ParaTabela = Table.FromList( 
+        RemoveDistintos,
+        Splitter.SplitByNothing(), 
+        type table[ Data = Date.Type ] 
+    ),
+    SomenteData = Table.TransformColumns(ParaTabela,{"Data",each Date.From(_), type date})
+in
+    SomenteData
