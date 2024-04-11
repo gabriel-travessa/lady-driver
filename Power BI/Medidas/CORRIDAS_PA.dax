@@ -1,0 +1,13 @@
+CORRIDAS_PA = 
+VAR vDtmax = MAX(dCalendario[Data])
+VAR vDtmin = MIN(dCalendario[Data])
+VAR VDiff = DATEDIFF(vDtmin, vDtmax, DAY)
+RETURN
+CALCULATE(
+    SUM(FRide_ALLTIME[CORRIDAS]),
+    DATEADD(dCalendario[Data], -VDiff - 1, DAY)
+)
+
+PERÍODO ANTERIOR (PA) DataMin = 
+    DATEADD(dCalendario[Data], - dCalendario[PERÍODO ANTERIOR (PA) EM DIAS], DAY)
+RETURN

@@ -1,0 +1,5 @@
+LM =
+    CALCULATE(
+        sum(TABELA[COLUNA]),
+        DATEADD(dCalendario[data], -1, MONTH)
+    )

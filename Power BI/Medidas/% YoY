@@ -1,0 +1,6 @@
+% YoY = 
+    var VarCOLUNALY = [LY]
+    var VarResultado =
+        DIVIDE(tabela[coluna]- VarCOLUNALY, VarCOLUNALY )
+RETURN
+    VarResultado

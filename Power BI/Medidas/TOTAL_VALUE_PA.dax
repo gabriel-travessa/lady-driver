@@ -1,0 +1,22 @@
+TOTAL_VALUE_PA = 
+VAR vDtmax = MAX(dCalendario[Data])
+VAR vDtmin = MIN(dCalendario[Data])
+VAR VDiff = DATEDIFF(vDtmin, vDtmax, DAY)
+RETURN
+CALCULATE(
+    SUM(FRide_2024[total_value]),
+    DATEADD(dCalendario[Data], -VDiff - 1, DAY)
+)
+
+PERÍODO ANTERIOR (PA) = 
+VAR DataAtual = MAX(dCalendario[Data])
+VAR DataPA = CALCULATE(MAX(dCalendario[Data]), FILTER(dCalendario, dCalendario[Data] < DataAtual))
+RETURN
+    FORMAT(DataPA, "DD/MM/YYYY")
+
+PERÍODO ANTERIOR (PA) =
+    VAR vDtmax = MAX(dCalendario[Data])
+    VAR vDtmin = MIN(dCalendario[Data])
+    VAR VDiff = DATEDIFF(vDtmin, vDtmax, DAY)
+RETURN
+    FORMAT(DATEADD(dCALENDARIO, -VDiff, DAY), "DD/MM/YYYY")

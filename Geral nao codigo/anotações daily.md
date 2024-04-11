@@ -19,3 +19,10 @@ Jessica: Não tem reunião com licenciado, tem apenas alinhamento e whatsapp
 
 Mayra: tem q reunião de bater as cidades, quer alinhar com time algumas coisas de contrato para time melhorar comunicação com licenciados. Tem 2 reuniões com licenciados hoje, cidades que estão com revenda vão ficar com a Mayra à partir de agora. 2h vai ficar off por questões pessoais
 
+## 08/04/2024
+Eliane: Muitas reuniões com licenciados hoje e um pouco de whatsapp, tem mais pendências com o Guilherme
+Sandra: Revisão das contas, tem algumas tratativas com Gaby
+Jéssica: Tem reunião, whatsapp, e-mail
+Gabriel: revi power query, tenho que rever as relações e criar as medidas em dax
+Mayra: quer rever um modelo de relatório, tem reuniao presencial com Dra Isabela e Gaby, tem reunião com RJ e Ipatinga. Me pediu pra participar da Reuinão com RJ as 13h
+Thau: Ensinou uma licenciada a impulsion, pediu para time comunicar com todos os grupos que whatsapp está funcionando, tem apenas 2 reuniões, falou mais um monte de coisa só que é difícil acompanhar escrevendo. Deu várias informações mais minuciosas sobre peculiaridades do marketing

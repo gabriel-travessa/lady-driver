@@ -1,0 +1,6 @@
+% MoM = 
+    var VarCOLUNAMoM = [LM]
+    var VarResultado =
+        DIVIDE(SUM(tabela[coluna])- VarCOLUNAMoM, VarCOLUNAMoM )
+RETURN
+    VarResultado

@@ -1,0 +1,2 @@
+DETALHE CORRIDAS % MoM = 
+    FORMAT (FRide_ALLTIME[CORRIDAS % MoM], "setaparacima"0%, "setaaprabaixo" 0%)
