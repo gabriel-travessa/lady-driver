@@ -1,0 +1,73 @@
+CORRIDAS_LY = 
+VAR vULTIMAVENDA =
+    CALCULATE(
+        LASTDATE(FRide_ALLTIME[created_date]), ALL(FRide_ALLTIME)
+    )
+VAR vDATALIMITE = EDATE(vULTIMAVENDA, -12)
+RETURN
+CALCULATE(
+    SUM(FRIDE_ALLTIME[CORRIDAS]),
+    SAMEPERIODLASTYEAR(FRide_ALLTIME[created_date]),
+    FILTER(
+        (ALL(FRide_ALLTIME)),
+        FRide_ALLTIME[created_date] <= vDATALIMITE
+    )
+)
+
+// ESSE AQUI ABAIXO FILTROU PARA CITY_ID=1 E FINISHED, SO FALTA DESCOBRIR COMO SER DINAMICO
+CORRIDAS_LY4 = 
+VAR vULTIMAVENDA =
+    CALCULATE(
+        LASTDATE(FRide_ALLTIME[created_date]), ALL(FRide_ALLTIME)
+    )
+VAR vDATALIMITE = EDATE(vULTIMAVENDA, -12)
+RETURN
+CALCULATE(
+    SUM(FRIDE_ALLTIME[CORRIDAS]),
+    SAMEPERIODLASTYEAR(FRide_ALLTIME[created_date]),
+    FILTER(
+        FILTER(
+            (ALL(FRide_ALLTIME)),
+            FRide_ALLTIME[created_date] <= vDATALIMITE
+        ), FRide_ALLTIME[city_id] = 1 && FRide_ALLTIME[status] = "FINISHED"
+
+))
+// funcionou! +/- se o valor for zero buga o visual
+CORRIDAS_LY4 = 
+VAR vULTIMAVENDA =
+    CALCULATE(
+        LASTDATE(FRide_ALLTIME[created_date]), ALL(FRide_ALLTIME)
+    )
+VAR vDATALIMITE = EDATE(vULTIMAVENDA, -12)
+RETURN
+CALCULATE(
+    SUM(FRIDE_ALLTIME[CORRIDAS]),
+    SAMEPERIODLASTYEAR(FRide_ALLTIME[created_date]),
+    FILTER(
+        FILTER(
+            (ALL(FRide_ALLTIME)),
+            FRide_ALLTIME[created_date] <= vDATALIMITE
+        ), FRide_ALLTIME[city_id] IN VALUES(dCity[city_id]) && FRide_ALLTIME[status] IN VALUES(DStatus[status])
+
+))
+
+
+FINALIZADAS = 
+CALCULATE(
+    SUM(FRide_ALLTIME[CORRIDAS]),
+    FILTER(
+        FRide_ALLTIME,
+        FRide_ALLTIME[status] = "FINISHED"
+    )
+)
+
+& FRide_ALLTIME[status] = "FINISHED"
+FINALIZADAS_LY2 =
+CALCULATE(
+        CORRIDAS_LY,
+        FILTER(
+            FRide_ALLTIME,
+            FRIDE_ALLTIME[status] = "FINISHED"
+        )
+    
+)

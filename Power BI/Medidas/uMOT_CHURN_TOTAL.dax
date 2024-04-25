@@ -1,0 +1,63 @@
+uMOT_CHURN_TOTAL = 
+VAR VDiff = dCalendario[PERÍODO ANTERIOR (PA) EM DIAS]
+VAR Data_Anterior = MAX(dCalendario[Data]) - VDiff - 1
+VAR VTABLE =
+    CALCULATETABLE(
+        VALUES(FRide[driver_id]),
+        FILTER(
+            ALL(FRide),
+            FRide[Data(FRIDE)] = Data_Anterior
+        )
+    )
+RETURN
+COUNTROWS(VTABLE)
+
+
+Novos_Motoristas_Prev_E_Na_Data_Atual = 
+VAR VDiff = dCalendario[PERÍODO ANTERIOR (PA) EM DIAS]
+VAR Data_Anterior = MAX(dCalendario[Data]) - VDiff - 1
+VAR VTABLE = dPassenger_payment_Methods[payment_method_name]
+    CALCULATETABLE(
+        VALUES(FRide[driver_id]),
+            FILTER
+            (FILTER(
+                ALL(FRide),
+                FRide[Data(FRIDE)] = Data_Anterior
+            ),
+            FRide[city_id] in SELECTEDVALUE(dCity[city_id]) && FRide[status] in SELECTEDVALUE(DStatus[status]) && FRide[payment_methods_id] in SELECTEDVALUE(dPassenger_Payment_Methods[payment_method_id])
+
+        ),
+    )
+RETURN
+COUNTROWS(VTABLE)
+
+Novos_Motoristas_Prev_E_Na_Data_Atual = 
+VAR VDiff = dCalendario[PERÍODO ANTERIOR (PA) EM DIAS]
+VAR Data_Anterior = MAX(dCalendario[Data]) - VDiff - 1
+VAR VTABLE =
+    CALCULATETABLE(
+        VALUES(FRide[driver_id]),
+        FILTER(
+            ALL(FRide),
+            FRide[Data(FRIDE)] = Data_Anterior
+        )
+    )
+RETURN
+COUNTROWS(VTABLE)
+
+// trcou provavelmnte no filter que usa FRide[city_id] in SELECTEDVALUE(dCity[city_id])
+Novos_Motoristas_Prev_E_Na_Data_Atual = 
+VAR VDiff = dCalendario[PERÍODO ANTERIOR (PA) EM DIAS]
+VAR Data_Anterior = MAX(dCalendario[Data]) - VDiff - 1
+VAR VTABLE =
+    CALCULATETABLE(
+        VALUES(FRide[driver_id]),
+        FILTER(
+            FILTER(
+                ALL(FRide),
+                FRide[Data(FRIDE)] = Data_Anterior
+            ), FRide[city_id] in SELECTEDVALUE(dCity[city_id])
+        )
+    )
+RETURN
+COUNTROWS(VTABLE)

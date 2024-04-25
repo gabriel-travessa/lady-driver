@@ -25,4 +25,16 @@ Sandra: Revisão das contas, tem algumas tratativas com Gaby
 Jéssica: Tem reunião, whatsapp, e-mail
 Gabriel: revi power query, tenho que rever as relações e criar as medidas em dax
 Mayra: quer rever um modelo de relatório, tem reuniao presencial com Dra Isabela e Gaby, tem reunião com RJ e Ipatinga. Me pediu pra participar da Reuinão com RJ as 13h
-Thau: Ensinou uma licenciada a impulsion, pediu para time comunicar com todos os grupos que whatsapp está funcionando, tem apenas 2 reuniões, falou mais um monte de coisa só que é difícil acompanhar escrevendo. Deu várias informações mais minuciosas sobre peculiaridades do marketing
+Thau: Ensinou uma licenciada a impulsion, pediu para time comunicar com todos os grupos que whatsapp está funcionando, tem apenas 2 reuniões, falou mais um monte de coisa só que é difícil acompanhar escrevendo. Deu várias informações mais minuciosas sobre peculiaridades do 
+
+## 10/04/2024
+Thau: Ontem fez um questionario para as meninas mandarem pros licenciados antes de reunião de ações para entrar com informações. Está com demanda alta por conta do suporte do whatsapp; Aracaju está com dificuldades no dinâmico; Pediu paciência em relação aos protocolos, Lady Está contratando mais pessoas porém ainda está na etapa dos currículos. Pediu para aguardar o envio do comunicado que montaram ontem para fazer algumas alterações.
+
+Eliane: Tem as reuniões, relembrou gui da reunião com poliana 9:30
+
+Jess: tem as reuniões, santos precisa da ferramenta de dinâmico. Garantir agendamento/agendamento finalizados verifica jundiaí. 
+
+Mayra: treinamentos, reuniões com licenciados, algumas dessas sobre revandas
+
+#8FE4BA
+#2952C4

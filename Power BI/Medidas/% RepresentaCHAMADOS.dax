@@ -1,0 +1,40 @@
+% RepresentaFINALIZADAS = 
+// sei lá que resultado é esse mas não deu erro, desisti de fazer assim
+VAR FINALIZADAS = 
+    CALCULATE(
+        SUM(FRide_ALLTIME[CORRIDAS]),
+        FILTER(
+            FRide_ALLTIME,
+            FRide_ALLTIME[status] = "FINISHED"
+        )
+    )
+
+VAR vAcumuladoGrupo =
+    IF(
+        ISINSCOPE(dCity[UF]), // Verifica se está no grupo UF
+        CALCULATE(
+            SUM(FRide_ALLTIME[CORRIDAS]), // Soma de CORRIDAS
+            ALL(dCity[UF]) // Remove o filtro de UF
+        ),
+        BLANK() // Retorna BLANK se não estiver no grupo UF
+    )
+
+VAR vAcumuladoDescricao =
+    IF(
+        ISINSCOPE(dCity[Cidade]), // Verifica se está no grupo Cidade
+        CALCULATE(
+            SUM(FRide_ALLTIME[CORRIDAS]), // Soma de CORRIDAS
+            ALL(dCity[Cidade]) // Remove o filtro de Cidade
+        ),
+        BLANK() // Retorna BLANK se não estiver no grupo Cidade
+    )
+
+VAR vResultado =
+    IF(
+        ISINSCOPE(dCity[Cidade]), // Verifica se está no grupo Cidade
+        vAcumuladoDescricao,
+        vAcumuladoGrupo
+    )
+
+RETURN
+    DIVIDE(FINALIZADAS, vResultado)

@@ -1,0 +1,32 @@
+% RepresentaFINALIZADAS = 
+    var FINALIZADAS = 
+    CALCULATE(
+        SUM(FRide_ALLTIME[CORRIDAS]),
+        FILTER(
+            FRide_ALLTIME,
+            FRide_ALLTIME[status] = "FINISHED"
+        )
+    )
+    var vAcumuladoGrupo =
+        CALCULATE(
+                FINALIZADAS),
+                ALL(dCity[UF]),
+                VALUES(FINALIZADAS
+        )
+
+    var vAcumuladoDescricao =
+        CALCULATE(
+                SUM(FINALIZADAS),
+                ALL(dCity[Cidade]),
+                VALUES(dCity[uf])
+        )
+    var vnivel =
+        ISINSCOPE(
+            dCity[Cidade])
+    var vResultado =
+        IF(vnivel,
+        vAcumuladoDescricao,
+        vAcumuladoGrupo
+        )
+RETURN
+   DIVIDE(FINALIZADAS,vResultado)

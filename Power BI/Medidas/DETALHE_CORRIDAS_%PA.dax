@@ -1,0 +1,11 @@
+DETALHE CORRIDAS % PA = 
+VAR VarCORRIDAMoM = FRide_ALLTIME[FINALIZADAS_%LY] -- Sua medida "CORRIDAS % MoM" aqui
+VAR Setas =
+    SWITCH (
+        TRUE(),
+        VarCORRIDAMoM > 0, Emoji[EMoji_Seta_Cima_Simples], -- Seta para cima
+        VarCORRIDAMoM < 0, Emoji[EMoji_Seta_Baixo_Simples], -- Seta para baixo
+        Emoji[EMoji_Seta_Horizontal_Simples] -- Seta horizontal (se não houver variação)
+    )
+RETURN
+    FORMAT(VarCORRIDAMoM, "0.00%") & " " & Setas

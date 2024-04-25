@@ -1,0 +1,15 @@
+CORRIDAS_LMc = 
+VAR vULTIMAVENDA =
+    CALCULATE(
+        LASTDATE(FRide_ALLTIME[created_date]), ALL(FRide_ALLTIME)
+    )
+VAR vDATALIMITE = EDATE(vULTIMAVENDA, -1) // (-1)=MONTH, (-12)=YEAR
+RETURN
+CALCULATE(
+    SUM(FRIDE_ALLTIME[CORRIDAS]),
+    DATEADD(FRide_ALLTIME[created_date], -1, MONTH), //PODE SER DAY, MONTH OU YEAR
+    FILTER(
+        (ALL(FRide_ALLTIME)),
+        FRide_ALLTIME[created_date] <= vDATALIMITE
+    )
+)
